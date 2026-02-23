@@ -21,26 +21,28 @@ let speedX = 5; // horizontal speed
 
 // Get the image element
 const movableImage = document.getElementById('movableImage');
+console.log('movableImage:', movableImage);
 
 // Button event listeners
 const leftButton = document.getElementById('leftButton');
 const rightButton = document.getElementById('rightButton');
 const niggaButton = document.getElementById('niggaButton');
 
-leftButton.addEventListener('pointerdown', (e) => { e.preventDefault(); leftPressed = true; });
-leftButton.addEventListener('pointerup', () => leftPressed = false);
-leftButton.addEventListener('pointerleave', () => leftPressed = false);
+leftButton.addEventListener('pointerdown', (e) => { e.preventDefault(); leftPressed = true; console.log('left pressed'); });
+leftButton.addEventListener('pointerup', () => { leftPressed = false; console.log('left released'); });
+leftButton.addEventListener('pointerleave', () => { leftPressed = false; console.log('left leave'); });
 
-rightButton.addEventListener('pointerdown', (e) => { e.preventDefault(); rightPressed = true; });
-rightButton.addEventListener('pointerup', () => rightPressed = false);
-rightButton.addEventListener('pointerleave', () => rightPressed = false);
+rightButton.addEventListener('pointerdown', (e) => { e.preventDefault(); rightPressed = true; console.log('right pressed'); });
+rightButton.addEventListener('pointerup', () => { rightPressed = false; console.log('right released'); });
+rightButton.addEventListener('pointerleave', () => { rightPressed = false; console.log('right leave'); });
 
-niggaButton.addEventListener('pointerdown', (e) => { e.preventDefault(); niggaPressed = true; });
-niggaButton.addEventListener('pointerup', () => niggaPressed = false);
-niggaButton.addEventListener('pointerleave', () => niggaPressed = false);
+niggaButton.addEventListener('pointerdown', (e) => { e.preventDefault(); niggaPressed = true; console.log('nigga pressed'); });
+niggaButton.addEventListener('pointerup', () => { niggaPressed = false; console.log('nigga released'); });
+niggaButton.addEventListener('pointerleave', () => { niggaPressed = false; console.log('nigga leave'); });
 
 
 function update() {
+  console.log('update called, leftPressed:', leftPressed, 'rightPressed:', rightPressed, 'imageX:', imageX);
   if (leftPressed) {
     imageX -= speedX;
   }
