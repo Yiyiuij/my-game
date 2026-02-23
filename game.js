@@ -52,8 +52,9 @@ function update() {
    niggaPressed = false
   }
   // Keep image within bounds
+  const imgWidth = movableImage.offsetWidth;
   if (imageX < 0) imageX = 0;
-  if (imageX + 712 > window.innerWidth) imageX = window.innerWidth - 712;
+  if (imageX + imgWidth > window.innerWidth) imageX = window.innerWidth - imgWidth;
 
   // Update image position
   movableImage.style.left = imageX + 'px';
